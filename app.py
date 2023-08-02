@@ -1,5 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 import os
+import asyncio
+
 
 app = FastAPI()
 
@@ -14,3 +16,4 @@ def files_open():
         except FileNotFoundError:
             fd_info[fd] = "File descriptor closed before it could be read"
     return fd_info
+
